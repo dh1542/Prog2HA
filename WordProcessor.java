@@ -1,4 +1,5 @@
-public class WordProcessor  extends Thread {
+public class WordProcessor extends Thread {
+
 
     int limit;
     int offset;
@@ -58,14 +59,14 @@ public class WordProcessor  extends Thread {
 
                 }
                 off = Math.abs(arrayl - off);
-                System.out.println(off);
+                
 
 
                 if(off >= limit){
                     off = 0;
                 }
                 this.offset = off;
-                System.out.println(off);
+               
             }
             this.offset = Math.abs(offset);
         }
@@ -88,8 +89,7 @@ public class WordProcessor  extends Thread {
     {
         synchronized (this){
 
-            System.out.println("Offset: " + getOffset());
-            System.out.println("Limit: " + getLimit());
+            
 
 
 
@@ -106,7 +106,7 @@ public class WordProcessor  extends Thread {
                 String word = Data.words[counter ];
                 word = word.toLowerCase();
                 word = Data.rightPad(word, 12, "0");
-                System.out.println(counter + ":   " + word);
+                System.out.println(word);
 
                 counter ++;
 
@@ -117,13 +117,4 @@ public class WordProcessor  extends Thread {
     }
 
 
-
-
-
-
-
-
-
-
-    // TODO: implement me
 }
